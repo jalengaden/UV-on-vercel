@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script src="/uv/uv.bundle.js"></script>
-        <script src="/uv/uv.config.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>Shadow Proxy</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/assets/favicon.ico" />
+</head>
+<body class="dark">
+  <header>
+    <h1>Shadow Proxy</h1>
+    <input id="siteInput" type="text" placeholder="Enter a site (example.com)" />
+    <button onclick="goProxy()">Go</button>
+    <button id="toggleTheme">🌗</button>
+  </header>
 
-        <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/uv/sw.js", {
-                    scope: __uv$config.prefix,
-                });
-            });
-        }
-        </script>
+  <main>
+    <section id="shortcuts">
+      <h2>Quick Launch</h2>
+      <div class="grid">
+        <button onclick="quickLaunch('youtube.com')">YouTube</button>
+        <button onclick="quickLaunch('coolmathgames.com')">CoolMath</button>
+        <button onclick="quickLaunch('tiktok.com')">TikTok</button>
+        <button onclick="quickLaunch('discord.com')">Discord</button>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="example.css">
-    </head>
-    <body>
-        <input type="text" id="urlInput" placeholder="Enter URL here">
-        <button id="searchButton">Search Text</button>
+    <section id="gameLauncher">
+      <h2>Game Launcher</h2>
+      <input id="gameSearch" type="text" placeholder="Search games..." oninput="filterGames()" />
+      <div id="gameList" class="grid"></div>
+    </section>
+  </main>
 
-        <iframe id="iframeWindow" class="iframeWindow"></iframe>
-    </body>
-    <script src="example.js"></script>
+  <footer>
+    <p>Shadow Proxy by Johann Alengaden • <a href="https://github.com/jalengaden/UV-on-vercel">GitHub</a></p>
+  </footer>
+
+  <script src="/js/uv.js"></script>
+  <script src="/js/games.js"></script>
+  <script src="/js/main.js"></script>
+</body>
 </html>
