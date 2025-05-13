@@ -1,41 +1,122 @@
-.iframeWindow {
-    position: absolute;
-    width: 100vw;
-    height: 90vh;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #fff;
+/* /css/style.css – Shadow Theme UI */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
-#urlInput {
-    position: absolute;
-    padding: 0em;
-    padding-left: 0.5em;
-    margin: 0;
-    left: 0;
-    top: 0;
-    width: 80vw;
-    height: 10vh;
-    border: 0;
-    outline: 0;
-    color: aliceblue;
-    background-color: #25252a;
-    font-size: 5vh;
+header {
+  padding: 1rem;
+  background: #111827;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-#searchButton {
-    position: absolute;
-    margin: 0;
-    right: 0;
-    top: 0;
-    width: 20vw;
-    height: 10vh;
-    border: 0;
-    outline: 0;
-    color: #141414;
-    background-color: aliceblue;
-    font-size: 5vh;
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+header input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  width: 300px;
+  margin: 0.5rem;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+main {
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+section h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+#gameList button {
+  background: #1f2937;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #374151;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#gameList button:hover {
+  background: #374151;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+input#gameSearch {
+  width: 100%;
+  padding: 0.75rem;
+  background: #111827;
+  border: 1px solid #374151;
+  color: white;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+/* Optional Dark Theme Toggle Styles */
+body.light {
+  background: #f9fafb;
+  color: #111827;
+}
+body.light header {
+  background: #ffffff;
+}
+body.light input,
+body.light button,
+body.light #gameList button {
+  background: #e5e7eb;
+  color: #111827;
+}
+body.light #gameList button:hover {
+  background: #d1d5db;
 }
